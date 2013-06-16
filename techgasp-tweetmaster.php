@@ -2,11 +2,11 @@
 /**
 Plugin Name: Tweet Master
 Plugin URI: http://wordpress.techgasp.com/tweet-master/
-Version: 2.0
+Version: 3.0
 Author: TechGasp
 Author URI: http://wordpress.techgasp.com
 Text Domain: tweet-master
-Description: With Tweet Master plugin you can display your latest tweets and tweet button inside any widget position of your wordpress template.
+Description: With Tweet Master plugin you can display your latest tweets, favorite twitter lists and tweet button inside any widget position of your wordpress template.
 License: GPL2 or later
 */
 /*  Copyright 2013 TechGasp  (email : info@techgasp.com)

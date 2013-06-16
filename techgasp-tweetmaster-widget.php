@@ -10,7 +10,7 @@ register_widget( 'techgasp_tweetmaster_widget' );
 
 class techgasp_tweetmaster_widget extends WP_Widget {
 	function techgasp_tweetmaster_widget() {
-	$widget_ops = array( 'classname' => 'Tweet Master', 'description' => __('With Tweet Master plugin you can display your latest tweets and tweet button inside any widget position of your wordpress template. ', 'Tweet Master') );
+	$widget_ops = array( 'classname' => 'Tweet Master', 'description' => __('With Tweet Master plugin you can display your latest tweets, favorite twitter lists and tweet button inside any widget position of your wordpress template. ', 'Tweet Master') );
 	$control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'techgasp_tweetmaster_widget' );
 	$this->WP_Widget( 'techgasp_tweetmaster_widget', __('Tweet Master', 'tweet master'), $widget_ops, $control_ops );
 	}

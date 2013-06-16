@@ -37,9 +37,9 @@
 
 <img src="../wp-content/plugins/tweet-master/techgasp-tweetmaster-logo.png" alt="Tweet Master" align="left" width="387px" height="171px" style="padding:5px;"/>
 <p><h2>Tweet Master:</h2></p>
-<p>With Tweet Master plugin you can display your latest tweets and tweet button inside any widget position of your wordpress template.</p>
+<p>With Tweet Master plugin you can display your latest tweets, favorite twitter lists and tweet button inside any widget position of your wordpress template.</p>
 </br>
-<p><em>Tweet Master boosts your social engagemen...</em><p>
+<p><em>Tweet Master boosts your social engagement...</em><p>
 </br>
 </br>
 <p><h3>Options & Configuration:</h3></p>
@@ -50,7 +50,7 @@
 <p><a class="button-primary" href="widgets.php" title="Widgets Page">To Widgets Page</a> <a class="button-secondary" href="http://wordpress.techgasp.com/tweet-master/" target="_blank" title="More Help">More Help</a> <a class="button-primary" href="http://wordpress.techgasp.com/tweet-master/" target="_blank" title="Tweet Master Advanced Version">Tweet Master Advanced Version</a></p>
 <hr>
 <p><h3>Tweet Master Advanced Version:</h3></p>
-<p>Display or hide Widget Title, Display Tweet Button with bubble count, Display your latest Tweets, Shortcode Framework, publish widget inside pages and posts.</p>
+<p>Display or hide Widget Title, Display Tweet Button with bubble count, Display your latest Tweets, Display your favourite Twitter Lists, Shortcode Framework, publish widget inside pages and posts.</p>
 <p><a class="button-primary" href="http://wordpress.techgasp.com/tweet-master/" target="_blank" title="Tweet Master Advanced Version">Tweet Master Advanced Version</a></p>
 </form>
 </div>

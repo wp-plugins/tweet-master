@@ -2,7 +2,7 @@
 /**
 Plugin Name: Tweet Master
 Plugin URI: http://wordpress.techgasp.com/tweet-master/
-Version: 3.0
+Version: 3.1
 Author: TechGasp
 Author URI: http://wordpress.techgasp.com
 Text Domain: tweet-master
@@ -32,7 +32,11 @@ define('TECHGASP_TWEETMASTER_ID', 'tweet-master-options');
 // DEFINE PLUGIN NICK
 define('TECHGASP_TWEETMASTER_NICK', 'Tweet Master');
 
+// HOOK WIDGET
 require_once('techgasp-tweetmaster-widget.php');
+
+// HOOK INVITATION
+require_once('techgasp-tweetmaster-invite.php');
 
     class techgasp_tweetmaster
     {
@@ -97,9 +101,10 @@ require_once('techgasp-tweetmaster-widget.php');
 		*/
 		public static function content_with_quote($content)
 		{
-			$quote = '<p><blockquote>' . get_option('tsm_quote') . '</blockquote></p>';
+			$quote = '<p>' . get_option('tsm_quote') . '</p>';
 			return $content . $quote;
 		}
+		
 		
 		// Add settings link on plugin page
 		public function techgasp_tweetmaster_link($links, $file) {

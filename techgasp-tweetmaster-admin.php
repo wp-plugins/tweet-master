@@ -2,7 +2,7 @@
 <div class="icon32" style="width:40px; vertical-align:middle;"><img src="../wp-content/plugins/tweet-master/techgasp-minilogo.png" alt="' . esc_attr__( 'TechGasp Plugins') . '" /><br /></div>
 
 <h2><b>TechGasp - Tweet Master Lite Version</b></h2>
-<form method="post" action="techgasp-tweetnmaster-admin.php"> 
+<form method="post" action="techgasp-tweetmaster-admin.php"> 
 <p><b>About TechGasp:</b></p>
 <p>Major player in the Content Management System world! Joomla and Jomsocial Partner with more than 100 high quality, error free Extensions. We provide website customizations and development, SEO Optimization, Facebook Apps, etc. We have fast & furious specialized Hosting for WordPress and Joomla. Our promise, the use of minimal error free code with fast loading times. Also to avoid the implementation of useless Javascript and Ajax in CMS by replacing it with solida php, css, html5 and iframe. Check our website for more high quality extensions. Stay up to date by "like" and "follow" our facebook and twitter page for fresh news, releases and upgrades and updates.</p>
 

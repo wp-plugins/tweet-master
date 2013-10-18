@@ -2,11 +2,11 @@
 /**
 Plugin Name: Tweet Master
 Plugin URI: http://wordpress.techgasp.com/tweet-master/
-Version: 3.1
+Version: 4.0
 Author: TechGasp
 Author URI: http://wordpress.techgasp.com
 Text Domain: tweet-master
-Description: With Tweet Master plugin you can display your latest tweets, favorite twitter lists and tweet button.
+Description: With Tweet Master plugin you can display your latest tweets, favourite twitter lists and tweet button.
 License: GPL2 or later
 */
 /*  Copyright 2013 TechGasp  (email : info@techgasp.com)
@@ -24,22 +24,23 @@ License: GPL2 or later
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
-if(!class_exists('techgasp_tweetmaster')) :
+
+if(!class_exists('tweet_master')) :
 
 // DEFINE PLUGIN ID
-define('TECHGASP_TWEETMASTER_ID', 'tweet-master-options');
+define('TWEET_MASTER_ID', 'tweet-master');
 
 // DEFINE PLUGIN NICK
-define('TECHGASP_TWEETMASTER_NICK', 'Tweet Master');
+define('TWEET_MASTER_NICK', 'Tweet Master');
 
 // HOOK WIDGET
-require_once('techgasp-tweetmaster-widget.php');
+require_once('includes/tweet-master-widget.php');
 
 // HOOK INVITATION
-require_once('techgasp-tweetmaster-invite.php');
 
-    class techgasp_tweetmaster
-    {
+// HOOK SHORTCODE
+
+	class tweet_master{
 		/** function/method
 		* Usage: return absolute file path
 		* Arg(1): string
@@ -54,9 +55,9 @@ require_once('techgasp-tweetmaster-invite.php');
 		* Arg(0): null
 		* Return: void
 		*/
-		public static function techgasp_tweetmaster_register()
+		public static function tweet_master_register()
 		{
-			register_setting(TECHGASP_TWEETMASTER_ID.'_options', 'tsm_quote');
+			register_setting(TWEET_MASTER_ID, 'tsm_quote');
 		}
 		/** function/method
 		* Usage: hooking (registering) the plugin menu
@@ -66,8 +67,8 @@ require_once('techgasp-tweetmaster-invite.php');
 		public static function menu()
 		{
 			// Create menu tab
-			add_options_page(TECHGASP_TWEETMASTER_NICK.' Plugin Options', TECHGASP_TWEETMASTER_NICK, 'manage_options', TECHGASP_TWEETMASTER_ID.'_options', array('techgasp_tweetmaster', 'options_page'));
-			add_filter( 'plugin_action_links', array('techgasp_tweetmaster', 'techgasp_tweetmaster_link'), 10, 2 );
+			add_options_page(TWEET_MASTER_NICK.' Plugin Options', TWEET_MASTER_NICK, 'manage_options', TWEET_MASTER_ID.'-admin', array('tweet_master', 'options_page'));
+			add_filter( 'plugin_action_links', array('tweet_master', 'tweet_master_link'), 10, 2 );
 		}
 		/** function/method
 		* Usage: show options/settings form page
@@ -80,20 +81,20 @@ require_once('techgasp-tweetmaster-invite.php');
 			{
 				wp_die( __('You do not have sufficient permissions to access this page.') );
 			}
-			$plugin_id = TECHGASP_TWEETMASTER_ID;
+			$plugin_id = TWEET_MASTER_ID;
 			// display options page
-			include(self::file_path('techgasp-tweetmaster-admin.php'));
+			include(self::file_path('includes/tweet-master-admin.php'));
 		}
 		/** function/method
-                * Usage: show options/settings form page
-                * Arg(0): null
-                * Return: void
-                */
-		 public static function techgasp_tweetmaster_widget()
-                {
-                        // display widget page
-                        include(self::file_path('techgasp-tweetmaster-widget.php'));
-                }
+		* Usage: show options/settings form page
+		* Arg(0): null
+		* Return: void
+		*/
+		 public static function tweet_master_widget()
+		{
+			// display widget page
+			include(self::file_path('includes/tweet-master-widget.php'));
+		}
 		/** function/method
 		* Usage: filtering the content
 		* Arg(1): string
@@ -104,24 +105,24 @@ require_once('techgasp-tweetmaster-invite.php');
 			$quote = '<p>' . get_option('tsm_quote') . '</p>';
 			return $content . $quote;
 		}
-		
-		
 		// Add settings link on plugin page
-		public function techgasp_tweetmaster_link($links, $file) {
-		static $this_plugin;
-		if (!$this_plugin) $this_plugin = plugin_basename(__FILE__);
-		if ($file == $this_plugin){
-		$settings_link = '<a href="' . admin_url( 'options-general.php?page='.TECHGASP_TWEETMASTER_ID).'_options' . '">' . __( 'Settings' ) . '</a>';
-		array_unshift($links, $settings_link);
-		}
+		public static function tweet_master_link($links, $file) {
+			static $this_plugin;
+			if (!$this_plugin) $this_plugin = plugin_basename(__FILE__);
+			if ($file == $this_plugin){
+				$settings_link = '<a href="' . admin_url( 'options-general.php?page='.TWEET_MASTER_ID).'-admin' . '">' . __( 'Settings' ) . '</a>';
+				array_unshift($links, $settings_link);
+			}
 		return $links;
 		}
+		// Advanced Updater
 	}
-		if ( is_admin() )
+	if ( is_admin() )
 		{
-		add_action('admin_init', array('techgasp_tweetmaster', 'techgasp_tweetmaster_register'));
-		add_action('admin_menu', array('techgasp_tweetmaster', 'menu'));
+		add_action('admin_init', array('tweet_master', 'tweet_master_register'));
+		add_action('admin_menu', array('tweet_master', 'menu'));
+
 		}
-		add_filter('the_content', array('techgasp_tweetmaster', 'content_with_quote'));
+	add_filter('the_content', array('tweet_master', 'content_with_quote'));
 endif;
 ?>

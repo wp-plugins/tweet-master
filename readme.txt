@@ -2,7 +2,7 @@
 Contributors: Techgasp
 Tags: wordpress, plugin, widget, shortcode, techgasp, twitter, tweet, share, social, embedded tweet, latest tweets, twitter list
 Requires at least: 3.5
-Tested up to: 3.6.1
+Tested up to: 3.7
 Stable tag: 4.0
 License: GPLv2 or later
 

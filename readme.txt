@@ -3,7 +3,7 @@ Contributors: Techgasp
 Tags: wordpress, plugin, widget, shortcode, techgasp, twitter, tweet, share, social, embedded tweet, latest tweets, twitter list
 Requires at least: 3.5
 Tested up to: 3.7.1
-Stable tag: 4.0.1
+Stable tag: 4.0.2
 License: GPLv2 or later
 
 With Tweet Master plugin you can display your latest tweets, favourite twitter lists and tweet button.
@@ -93,6 +93,9 @@ IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX.
 
 
 == Changelog ==
+
+= 4.0.2 =
+* Faster Background Updater
 
 = 4.0.1 =
 * Changing directory calls to support Multi-Domains wordpress installations

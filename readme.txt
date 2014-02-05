@@ -2,8 +2,8 @@
 Contributors: Techgasp
 Tags: wordpress, plugin, widget, shortcode, techgasp, twitter, tweet, share, social, embedded tweet, latest tweets, twitter list
 Requires at least: 3.5
-Tested up to: 3.8
-Stable tag: 4.1
+Tested up to: 3.8.1
+Stable tag: 4.3
 License: GPLv2 or later
 
 With Tweet Master plugin you can display your latest tweets, favourite twitter lists and tweet button.
@@ -16,6 +16,10 @@ Since we are obsessed with clean, error free code and page load times, we made s
 
 With Tweets Master you can professionally display your twitter tweets and integrate it into your wordpress like a chameleon.
 
+Again and as usual with TechGasp extensions, the code is pristine, error free and with fast page loading times. Professional or business pages need to be fast and gain google seo rank.
+
+All widgets are fully mobile devices responsive, a must for any professional website
+
 **Tweet Master boosts your social engagement**
 
 IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX.
@@ -23,22 +27,27 @@ IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX.
 
 **LITE Version Contains:**
 
-* Display or hide Widget Title
-* Display or hide Tweet Button with bubble count
+* Display, Hide or Change any Widget Title
+* Tweet Master Buttons Widget
 
 **ADVANCED Version Contains:**
 
-* Display or hide Widget Title
-* Display or hide Tweet Button with bubble count
-* Display or hide your latest Tweets
-* Display or hide your favourite Twitter List
-* Shortcode Framework v2. Publish widget inside pages and posts
+* Fully Mobile Responsive
+* Display, Hide or Change any Widget Title
+* Tweet Master Buttons Widget:
+* All the Twitter buttons that you will need. Improved load speed and google seo
+* Tweet Master Tweets Widget:
+* Display your latest Tweets
+* Tweet Master Twitter Lists Widget:
+* Display your favourite Twitter Lists
+
+* Shortcode Framework v3. Universal Shortcode for all pages and posts and Individual Shortcode for each page or post
 * [Advanced Version Link](http://wordpress.techgasp.com/tweet-master/)
 
 **ONLINE DEMO**
 
-* Right of the page, sidebar widget
-* Inside the post, with shortcode framework v2
+* Right of the page, sidebar widgets
+* Inside the post, with shortcode framework v3
 * [Demo Link](http://wordpress.techgasp.com/tweet-master/)
 
 **More High Quality Plugins?**
@@ -51,9 +60,9 @@ IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX.
 
 == Installation ==
 
-1. Use the Wordpress Installer, Updater.
-2. Activate in the "Plugins" admin panel.
-3. Visit the "Widget Page | Tweet Master" to configure the settings and your template widget position.
+1. Use the Wordpress Installer, Updater
+2. Activate in the "Plugins" admin panel
+3. Visit the "Widget Page | Tweet Master Widgets" to configure widget settings and your template widget position
 4. [Tweet Master Documentation](http://wordpress.techgasp.com/tweet-master-documentation)
 
 
@@ -62,20 +71,21 @@ IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX.
 = Issues with buttons display =
 * Please update to latest version. Up-to-date API's are available
 
-= Where are my tweets? =
-* Advanced Version contains: Display or hide Widget Title, Display Tweet Button with bubble count, Display your latest Tweets, Display your favourite Twitter List, Shortcode Framework v2, publish widget inside pages and posts
+= Where are all widgets? =
+* Advanced Version Add-ons contains all widgets
 * [Advanced Version Link](http://wordpress.techgasp.com/tweet-master/)
 
-= Insert Widget in Pages or Posts =
-* Advanced Version contains the shortcode framework v2
-* Insert the shortcode into any page or post. [tweet-master]
+= Insert Shortcode in Pages or Posts =
+* Advanced Version Add-ons contain the shortcode framework v3
+* Insert the universal shortcode into any page or post. [tweet-master-un]
+* Insert the individual shortcode into any page or post. [tweet-master]
 * [Advanced Version Link](http://wordpress.techgasp.com/tweet-master/)
 
-= What's this Shortcode Framework v2 =
+= What's this Shortcode Framework v3 =
 * It's a framework developed by TechGasp and built upon wordpress marvellous resources
 * Allows users to quickly and easily display plugins or widgets inside their pages and posts
-* It's available in all TechGasp advanced version plugins. Lite versions plugins do not include shortcode framework v2
-* [About Shortcode Framework v2](http://wordpress.techgasp.com/new-wordpress-framework-from-techgasp/)
+* It's available in all TechGasp advanced version plugins. Lite versions plugins do not include shortcode framework v3
+* [About Shortcode Framework v3](http://wordpress.techgasp.com/techgasp-wordpress-framework-v3/)
 
 = Need More Help =
 * [Tweet Master Documentation](http://wordpress.techgasp.com/tweet-master-documentation)
@@ -87,12 +97,23 @@ IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX.
 1. Widget With latest Tweets Display (black color scheme) + Tweet Button. Sidebar Widget Area.
 2. Widget With latest Tweets Display (white color scheme). Sidebar Widget Area.
 3. Widget With favourite Twitter List Display (black color scheme) + Tweet Button. Sidebar Widget Area.
-4. Widget With latest Tweets Display (black color scheme) + favourite Twitter List Display (black color scheme) + Tweet Button. Sidebar Widget Area.
+4. Widget With latest Tweets Display (white color scheme) + favourite Twitter List Display (black color scheme) + Tweet Button. Sidebar Widget Area.
 5. Widget With latest Tweets Display (black color scheme) + Tweet Button. Footer Widget Area.
 6. Widget inside pages and posts. Shortcode framework v2 implementation. Latest Tweets Display inside a page, black color scheme.
+7. Widget Tweet Buttons with Follow Button (show username Off, show bubble count On) plus Tweet Button with (show bubble count On, Via, Hashtag and Recommend On)
 
 
 == Changelog ==
+
+= 4.3 =
+* New TechGasp Plugin Framework
+* New Plugin Menu
+* New Administrator Page
+* New Universal Shortcode that can be combined with Individual Shortcodes in Pages and Posts
+* Adding index SEC
+* Tweet Master Buttons Widget
+* Tweet Master Tweets Widget
+* Tweet Master Twitter Lists Widget
 
 = 4.1 =
 * Wordpress 3.8 Ready
@@ -131,8 +152,11 @@ IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX.
 
 == Upgrade Notice ==
 
+= 4.3 =
+* IMPORTANT Upgrade to new TechGasp Plugin Framework v3
+
 = 4.0 =
-* IMPORTANT Upgrade to new TechGasp Plugin Framework
+* IMPORTANT Upgrade to new TechGasp Plugin Framework v2
 
 = 3.0 =
 * IMPORTANT add-on released, Twitter Lists

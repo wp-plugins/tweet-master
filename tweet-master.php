@@ -2,7 +2,7 @@
 /**
 Plugin Name: Tweet Master
 Plugin URI: http://wordpress.techgasp.com/tweet-master/
-Version: 4.3
+Version: 4.3.5
 Author: TechGasp
 Author URI: http://wordpress.techgasp.com
 Text Domain: tweet-master
@@ -29,9 +29,9 @@ if(!class_exists('tweet_master')) :
 ///////DEFINE ID//////
 define('TWEET_MASTER_ID', 'tweet-master');
 ///////DEFINE VERSION///////
-define( 'tweet_master_VERSION', '4.3' );
+define( 'tweet_master_VERSION', '4.3.5' );
 global $tweet_master_version, $tweet_master_name;
-$tweet_master_version = "4.3"; //for other pages
+$tweet_master_version = "4.3.5"; //for other pages
 $tweet_master_name = "Tweet Master"; //pretty name
 if( is_multisite() ) {
 update_site_option( 'tweet_master_installed_version', $tweet_master_version );

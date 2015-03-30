@@ -1,16 +1,7 @@
 <?php
-if( is_multisite() ) {
-	function menu_multi_tweet_admin_shortcodes(){
-	// Create menu
+function menu_single_tweet_admin_shortcodes(){
+	if ( is_admin() )
 	add_submenu_page( 'tweet-master', 'Shortcodes', 'Shortcodes', 'manage_options', 'tweet-master-admin-shortcodes', 'tweet_master_admin_shortcodes' );
-	}
-}
-else {
-	// Create menu
-	function menu_single_tweet_admin_shortcodes(){
-		if ( is_admin() )
-		add_submenu_page( 'tweet-master', 'Shortcodes', 'Shortcodes', 'manage_options', 'tweet-master-admin-shortcodes', 'tweet_master_admin_shortcodes' );
-	}
 }
 
 function tweet_master_admin_shortcodes(){
@@ -40,20 +31,24 @@ $wp_list_table = new tweet_master_admin_shortcodes_table_un();
 //Table of elements
 $wp_list_table->display();
 ?>
+</br>
+<h2>IMPORTANT: Makes no use of Javascript or Ajax to keep your website fast and conflicts free</h2>
+
+<div style="background: url(<?php echo plugins_url('../images/techgasp-hr.png', __FILE__); ?>) repeat-x; height: 10px"></div>
+
 <br>
 
 <p>
 <a class="button-secondary" href="http://wordpress.techgasp.com" target="_blank" title="Visit Website">More TechGasp Plugins</a>
-<a class="button-secondary" href="http://wordpress.techgasp.com/support/" target="_blank" title="Facebook Page">TechGasp Support</a>
+<a class="button-secondary" href="http://wordpress.techgasp.com/support/" target="_blank" title="TechGasp Support">TechGasp Support</a>
 <a class="button-primary" href="http://wordpress.techgasp.com/tweet-master/" target="_blank" title="Visit Website"><?php echo get_option('tweet_master_name'); ?> Info</a>
 <a class="button-primary" href="http://wordpress.techgasp.com/tweet-master-documentation/" target="_blank" title="Visit Website"><?php echo get_option('tweet_master_name'); ?> Documentation</a>
 <a class="button-primary" href="http://wordpress.techgasp.com/tweet-master/" target="_blank" title="Visit Website">Get Add-ons</a>
 </p>
 <?php
 }
-
 if( is_multisite() ) {
-add_action( 'network_admin_menu', 'menu_multi_tweet_admin_shortcodes' );
+add_action( 'admin_menu', 'menu_single_tweet_admin_shortcodes' );
 }
 else {
 add_action( 'admin_menu', 'menu_single_tweet_admin_shortcodes' );

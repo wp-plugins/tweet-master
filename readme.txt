@@ -2,8 +2,8 @@
 Contributors: Techgasp
 Tags: wordpress, plugin, widget, shortcode, techgasp, twitter, tweet, share, social, embedded tweet, latest tweets, twitter list
 Requires at least: 3.5
-Tested up to: 4.1
-Stable tag: 4.3.6
+Tested up to: 4.1.1
+Stable tag: 4.4.1.4
 License: GPLv2 or later
 
 With Tweet Master plugin you can display your latest tweets, favourite twitter lists and tweet button.
@@ -28,18 +28,40 @@ IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX.
 **LITE Version Contains:**
 
 * Display, Hide or Change any Widget Title
-* Tweet Master Buttons Widget
+* Tweet Master Buttons Widget:
+* All the Twitter buttons that you will need. Improved load speed and google seo
+* Follow Button
+* Tweet Button
+* Hashtag Button
+* Mention Button
 
 **ADVANCED Version Contains:**
 
 * Fully Mobile Responsive
+* Wordpress Network or Multi-Sites Ready
 * Display, Hide or Change any Widget Title
+
 * Tweet Master Buttons Widget:
 * All the Twitter buttons that you will need. Improved load speed and google seo
+* Follow Button
+* Tweet Button
+* Hashtag Button
+* Mention Button
+
 * Tweet Master Tweets Widget:
 * Display your latest Tweets
+
 * Tweet Master Twitter Lists Widget:
 * Display your favourite Twitter Lists
+
+* Tweet Master Search Content Widget:
+* Display your favourite Twitter Searches
+
+* Tweet Master Tweet Content Widget:
+* Display your favourite Tweets
+
+* Tweet Master Video Content Widget:
+* Display your favourite Twitter Videos
 
 * TechGasp Shortcode Framework v3:
 * Universal Shortcode for all pages and posts, same Shortcode applies to all pages and posts. Option to Automatically add the shortcode to all pages and posts or manually add the pre-built shortcode individually per page or post. Option to automatically only show the shortcode in Posts and not Pages. Option to Automatically show the shortcode After the Title or After the Content.
@@ -100,13 +122,40 @@ IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX.
 1. Widget With latest Tweets Display (black color scheme) + Tweet Button. Sidebar Widget Area.
 2. Widget With latest Tweets Display (white color scheme). Sidebar Widget Area.
 3. Widget With favourite Twitter List Display (black color scheme) + Tweet Button. Sidebar Widget Area.
-4. Widget With latest Tweets Display (white color scheme) + favourite Twitter List Display (black color scheme) + Tweet Button. Sidebar Widget Area.
+4. Tweet Master Video Content Widget
 5. Widget With latest Tweets Display (black color scheme) + Tweet Button. Footer Widget Area.
-6. Widget inside pages and posts. Shortcode framework v2 implementation. Latest Tweets Display inside a page, black color scheme.
-7. Widget Tweet Buttons with Follow Button (show username Off, show bubble count On) plus Tweet Button with (show bubble count On, Via, Hashtag and Recommend On)
+6. Shortcode framework v2 implementation. Latest Tweets Display inside a page, black color scheme.
+7. Tweet Master Viral Widget, 2 screenshots
+8. Tweet Master Tweet Content Widget
+9. Tweet Master Search Content Widget
 
 
 == Changelog ==
+
+= 4.4.1.4 =
+* Getting all widget titles network ready
+* Adding Tweet Master Video Content Widget
+* Adding Tweet Master Tweet Content Widget
+* Adding Tweet Master Search Content Widget
+
+= 4.4.1.3 =
+* Tweaking Updater
+
+= 4.4.1.2 =
+* Adding Network Warnings and help texts
+
+= 4.4.1.1 =
+* Fixing uninstall, plugin deletion on wordpress network and multi-sites
+
+= 4.4.1.0 =
+* Fixing Shortcodes
+* Fixing Widgets
+* General clean-up and speed boost
+
+= 4.4.0 =
+* Wordpress multi-site or wordpress network ready
+* New screenshots and images
+* Twitter Buttons re-coded
 
 = 4.3.6 =
 * Added automatic deletion of site_transients

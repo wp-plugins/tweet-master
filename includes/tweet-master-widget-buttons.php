@@ -28,17 +28,25 @@ class tweet_master_widget_buttons extends WP_Widget {
 		$show_followbutton = isset( $instance['show_followbutton'] ) ? $instance['show_followbutton'] :false;
 		$show_followbutton_count = isset( $instance['show_followbutton_count'] ) ? $instance['show_followbutton_count'] :false;
 		$show_followbutton_user = isset( $instance['show_followbutton_user'] ) ? $instance['show_followbutton_user'] :false;
-		$tweets_code = $instance['tweets_code'];
-		$show_tweetlist = isset( $instance['show_tweetlist'] ) ? $instance['show_tweetlist'] :false;
-		$tweetlist_code = $instance['tweetlist_code'];
+		$show_hashtagbutton = isset( $instance['show_hashtagbutton'] ) ? $instance['show_hashtagbutton'] :false;
+		$twitterhastag = $instance['twitterhastag'];
+		$show_mentionbutton = isset( $instance['show_mentionbutton'] ) ? $instance['show_mentionbutton'] :false;
 		echo $before_widget;
 		
 		// Display the widget title
 	if ( $tweet_title ){
 		if (empty ($tweet_title_new)){
-		$tweet_title_new = get_option('tweet_master_name');
-		}
+			if(is_multisite()){
+			$tweet_title_new = get_site_option('tweet_master_name');
+			}
+			else{
+			$tweet_title_new = get_option('tweet_master_name');
+			}
 		echo $before_title . $tweet_title_new . $after_title;
+		}
+		else{
+		echo $before_title . $tweet_title_new . $after_title;
+		}
 	}
 	else{
 	}
@@ -58,8 +66,8 @@ class tweet_master_widget_buttons extends WP_Widget {
 	}
 	//Display Follow Button
 	if ( $show_followbutton ){
-		echo '<a href="https://twitter.com/'.$twitteruser.'" class="twitter-follow-button" '.$show_followbutton_count_create.' '.$show_followbutton_user_create.'></a>' .
-				'<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'.$tweetspacer.'http'.$tweetspacer.':'.$tweetspacer.'https'.$tweetspacer.';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'.$tweetspacer.'://platform.twitter.com/widgets.js'.$tweetspacer.';fjs.parentNode.insertBefore(js,fjs);}}(document, '.$tweetspacer.'script'.$tweetspacer.', '.$tweetspacer.'twitter-wjs'.$tweetspacer.');</script>';
+		$show_followbutton_create = '<a href="https://twitter.com/'.$twitteruser.'" class="twitter-follow-button" '.$show_followbutton_count_create.' '.$show_followbutton_user_create.'></a>' .
+		'<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'.$tweetspacer.'http'.$tweetspacer.':'.$tweetspacer.'https'.$tweetspacer.';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'.$tweetspacer.'://platform.twitter.com/widgets.js'.$tweetspacer.';fjs.parentNode.insertBefore(js,fjs);}}(document, '.$tweetspacer.'script'.$tweetspacer.', '.$tweetspacer.'twitter-wjs'.$tweetspacer.');</script>';
 	}
 	else{
 	}
@@ -72,12 +80,42 @@ class tweet_master_widget_buttons extends WP_Widget {
 	}
 	//Display Tweet Button
 	if ( $show_tweetbutton ){
-			echo '&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-via="'.$twitteruser.'" data-related="'.$twitteruser.'" data-hashtags="'.$twitteruser.'" '.$show_tweetbutton_count_create.'>Tweet</a>' .
-				'<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'.$tweetspacer.'http'.$tweetspacer.':'.$tweetspacer.'https'.$tweetspacer.';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'.$tweetspacer.'://platform.twitter.com/widgets.js'.$tweetspacer.';fjs.parentNode.insertBefore(js,fjs);}}(document, '.$tweetspacer.'script'.$tweetspacer.', '.$tweetspacer.'twitter-wjs'.$tweetspacer.');</script>';
+		$show_tweetbutton_create = '&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-via="'.$twitteruser.'" data-related="'.$twitteruser.'" data-hashtags="'.$twitteruser.'" '.$show_tweetbutton_count_create.'>Tweet</a>' .
+		'<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'.$tweetspacer.'http'.$tweetspacer.':'.$tweetspacer.'https'.$tweetspacer.';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'.$tweetspacer.'://platform.twitter.com/widgets.js'.$tweetspacer.';fjs.parentNode.insertBefore(js,fjs);}}(document, '.$tweetspacer.'script'.$tweetspacer.', '.$tweetspacer.'twitter-wjs'.$tweetspacer.');</script>';
 	}
 	else{
 	}
-	echo $after_widget;
+	//Display Hashtag Button
+	if ( $show_hashtagbutton ){
+		$show_hashtagbutton_create = '&nbsp;<a href="https://twitter.com/intent/tweet?button_hashtag='.$twitterhastag.'" class="twitter-hashtag-button" data-related="'.$twitteruser.'">Tweet #'.$twitterhastag.'</a>' .
+		'<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'.$tweetspacer.'http'.$tweetspacer.':'.$tweetspacer.'https'.$tweetspacer.';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'.$tweetspacer.'://platform.twitter.com/widgets.js'.$tweetspacer.';fjs.parentNode.insertBefore(js,fjs);}}(document, '.$tweetspacer.'script'.$tweetspacer.', '.$tweetspacer.'twitter-wjs'.$tweetspacer.');</script>';
+	}
+	else{
+	}
+	//Display Mention Button
+	if ( $show_mentionbutton ){
+		$show_mentionbutton_create = '&nbsp;<a href="https://twitter.com/intent/tweet?screen_name='.$twitteruser.'" class="twitter-mention-button" data-related="'.$twitteruser.'">Tweet to @'.$twitteruser.'</a>' .
+		'<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'.$tweetspacer.'http'.$tweetspacer.':'.$tweetspacer.'https'.$tweetspacer.';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'.$tweetspacer.'://platform.twitter.com/widgets.js'.$tweetspacer.';fjs.parentNode.insertBefore(js,fjs);}}(document, '.$tweetspacer.'script'.$tweetspacer.', '.$tweetspacer.'twitter-wjs'.$tweetspacer.');</script>';
+	}
+	else{
+	}
+	echo '<div style="width:100%;">' .
+			'<div style="width:65%; float:left;">' .
+			$show_followbutton_create .
+			'</div>' .
+			'<div style="width:35%; float:left;">' .
+			$show_tweetbutton_create .
+			'</div>' .
+		'</div>' .
+		'<div style="width:100%; clear:both;">' .
+			'<div style="width:50%; float:left;">' .
+			$show_hashtagbutton_create .
+			'</div>' .
+			'<div style="width:50%; float:left;">' .
+			$show_mentionbutton_create .
+			'</div>' .
+		'</div>' .
+	$after_widget;
 	}
 	//Update the widget
 	function update( $new_instance, $old_instance ) {
@@ -94,14 +132,14 @@ class tweet_master_widget_buttons extends WP_Widget {
 		$instance['show_followbutton'] = $new_instance['show_followbutton'];
 		$instance['show_followbutton_user'] = $new_instance['show_followbutton_user'];
 		$instance['show_followbutton_count'] = $new_instance['show_followbutton_count'];
-		$instance['tweets_code'] = $new_instance['tweets_code'];
-		$instance['show_tweetlist'] = $new_instance['show_tweetlist'];
-		$instance['tweetlist_code'] = $new_instance['tweetlist_code'];
+		$instance['show_hashtagbutton'] = $new_instance['show_hashtagbutton'];
+		$instance['twitterhastag'] = $new_instance['twitterhastag'];
+		$instance['show_mentionbutton'] = $new_instance['show_mentionbutton'];
 		return $instance;
 	}
 	function form( $instance ) {
 	//Set up some default widget settings.
-	$defaults = array( 'tweet_title_new' => __('Tweet Master', 'tweet_master'), 'tweet_title' => true, 'tweet_title_new' => false, 'twitteruser' => false, 'show_tweetbutton' => true, 'show_tweetbutton_count' => true, 'show_tweetbutton_via' => true, 'show_tweetbutton_hashtag' => true, 'show_tweetbutton_recommend' => true, 'show_followbutton' => true, 'show_followbutton_user' => true, 'show_followbutton_count' => true );
+	$defaults = array( 'tweet_title_new' => __('Tweet Master', 'tweet_master'), 'tweet_title' => true, 'tweet_title_new' => false, 'twitteruser' => false, 'show_tweetbutton' => true, 'show_tweetbutton_count' => true, 'show_tweetbutton_via' => true, 'show_tweetbutton_hashtag' => true, 'show_tweetbutton_recommend' => true, 'show_followbutton' => true, 'show_followbutton_user' => true, 'show_followbutton_count' => true, 'show_hashtagbutton' => false, 'twitterhastag' => false, 'show_mentionbutton' => false );
 	$instance = wp_parse_args( (array) $instance, $defaults );
 	?>
 		<br>
@@ -121,6 +159,7 @@ class tweet_master_widget_buttons extends WP_Widget {
 	<p>
 	<label for="<?php echo $this->get_field_id( 'twitteruser' ); ?>"><b><?php _e('Twitter Username:', 'tweet_master'); ?></b></label></br>
 	<input id="<?php echo $this->get_field_id( 'twitteruser' ); ?>" name="<?php echo $this->get_field_name( 'twitteruser' ); ?>" value="<?php echo $instance['twitteruser']; ?>" style="width:auto;" />
+	<div class="description">insert Twitter username without @</div>
 	</p>
 <div style="background: url(<?php echo plugins_url('../images/techgasp-hr.png', __FILE__); ?>) repeat-x; height: 10px"></div>
 	<p>
@@ -159,6 +198,27 @@ class tweet_master_widget_buttons extends WP_Widget {
 	<p>
 	<input type="checkbox" <?php checked( (bool) $instance['show_followbutton_count'], true ); ?> id="<?php echo $this->get_field_id( 'show_followbutton_count' ); ?>" name="<?php echo $this->get_field_name( 'show_followbutton_count' ); ?>" />
 	<label for="<?php echo $this->get_field_id( 'show_followbutton_count' ); ?>"><b><?php _e('Display Bubble Count', 'tweet_master'); ?></b></label>
+	</p>
+<div style="background: url(<?php echo plugins_url('../images/techgasp-hr.png', __FILE__); ?>) repeat-x; height: 10px"></div>
+	<p>
+	<img src="<?php echo plugins_url('../images/techgasp-minilogo-16.png', __FILE__); ?>" style="float:left; height:16px; vertical-align:middle;" />
+	&nbsp;
+	<input type="checkbox" <?php checked( (bool) $instance['show_hashtagbutton'], true ); ?> id="<?php echo $this->get_field_id( 'show_hashtagbutton' ); ?>" name="<?php echo $this->get_field_name( 'show_hashtagbutton' ); ?>" />
+	<label for="<?php echo $this->get_field_id( 'show_hashtagbutton' ); ?>"><b><?php _e('Twitter Hashtag Button', 'tweet_master'); ?></b></label>
+	</p>
+	<p>
+	<label for="<?php echo $this->get_field_id( 'twitterhastag' ); ?>"><b><?php _e('insert Hashtag:', 'tweet_master'); ?></b></label></br>
+	<input id="<?php echo $this->get_field_id( 'twitterhastag' ); ?>" name="<?php echo $this->get_field_name( 'twitterhastag' ); ?>" value="<?php echo $instance['twitterhastag']; ?>" style="width:auto;" />
+	<div class="description">insert Hashtag without #</div>
+	<div class="description">requires that you fill your Twitter Username</div>
+	</p>
+<div style="background: url(<?php echo plugins_url('../images/techgasp-hr.png', __FILE__); ?>) repeat-x; height: 10px"></div>
+	<p>
+	<img src="<?php echo plugins_url('../images/techgasp-minilogo-16.png', __FILE__); ?>" style="float:left; height:16px; vertical-align:middle;" />
+	&nbsp;
+	<input type="checkbox" <?php checked( (bool) $instance['show_mentionbutton'], true ); ?> id="<?php echo $this->get_field_id( 'show_mentionbutton' ); ?>" name="<?php echo $this->get_field_name( 'show_mentionbutton' ); ?>" />
+	<label for="<?php echo $this->get_field_id( 'show_mentionbutton' ); ?>"><b><?php _e('Twitter Mention Button', 'tweet_master'); ?></b></label>
+	<div class="description">requires that you fill your Twitter Username</div>
 	</p>
 <div style="background: url(<?php echo plugins_url('../images/techgasp-hr.png', __FILE__); ?>) repeat-x; height: 10px"></div>
 	<p>

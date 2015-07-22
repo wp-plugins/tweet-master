@@ -145,7 +145,7 @@ class tweet_master_widget_buttons extends WP_Widget {
 		<br>
 		<b>Check the buttons to be displayed:</b>
 	<p>
-	<img src="<?php echo plugins_url('../images/techgasp-minilogo-16.png', __FILE__); ?>" style="float:left; height:16px; vertical-align:middle;" />
+	<img src="<?php echo plugins_url('images/techgasp-minilogo-16.png', dirname(__FILE__)); ?>" style="float:left; height:16px; vertical-align:middle;" />
 	&nbsp;
 	<input type="checkbox" <?php checked( (bool) $instance['tweet_title'], true ); ?> id="<?php echo $this->get_field_id( 'tweet_title' ); ?>" name="<?php echo $this->get_field_name( 'tweet_title' ); ?>" />
 	<label for="<?php echo $this->get_field_id( 'tweet_title' ); ?>"><b><?php _e('Display Widget Title', 'tweet_master'); ?></b></label></br>
@@ -155,15 +155,15 @@ class tweet_master_widget_buttons extends WP_Widget {
 	<br>
 	<input id="<?php echo $this->get_field_id( 'tweet_title_new' ); ?>" name="<?php echo $this->get_field_name( 'tweet_title_new' ); ?>" value="<?php echo $instance['tweet_title_new']; ?>" style="width:auto;" />
 	</p>
-<div style="background: url(<?php echo plugins_url('../images/techgasp-hr.png', __FILE__); ?>) repeat-x; height: 10px"></div>
+<div style="background: url(<?php echo plugins_url('images/techgasp-hr.png', dirname(__FILE__)); ?>) repeat-x; height: 10px"></div>
 	<p>
 	<label for="<?php echo $this->get_field_id( 'twitteruser' ); ?>"><b><?php _e('Twitter Username:', 'tweet_master'); ?></b></label></br>
 	<input id="<?php echo $this->get_field_id( 'twitteruser' ); ?>" name="<?php echo $this->get_field_name( 'twitteruser' ); ?>" value="<?php echo $instance['twitteruser']; ?>" style="width:auto;" />
 	<div class="description">insert Twitter username without @</div>
 	</p>
-<div style="background: url(<?php echo plugins_url('../images/techgasp-hr.png', __FILE__); ?>) repeat-x; height: 10px"></div>
+<div style="background: url(<?php echo plugins_url('images/techgasp-hr.png', dirname(__FILE__)); ?>) repeat-x; height: 10px"></div>
 	<p>
-	<img src="<?php echo plugins_url('../images/techgasp-minilogo-16.png', __FILE__); ?>" style="float:left; height:16px; vertical-align:middle;" />
+	<img src="<?php echo plugins_url('images/techgasp-minilogo-16.png', dirname(__FILE__)); ?>" style="float:left; height:16px; vertical-align:middle;" />
 	&nbsp;
 	<input type="checkbox" <?php checked( (bool) $instance['show_tweetbutton'], true ); ?> id="<?php echo $this->get_field_id( 'show_tweetbutton' ); ?>" name="<?php echo $this->get_field_name( 'show_tweetbutton' ); ?>" />
 	<label for="<?php echo $this->get_field_id( 'show_tweetbutton' ); ?>"><b><?php _e('Tweet Share Button', 'tweet_master'); ?></b></label></br>
@@ -184,9 +184,9 @@ class tweet_master_widget_buttons extends WP_Widget {
 	<input type="checkbox" <?php checked( (bool) $instance['show_tweetbutton_recommend'], true ); ?> id="<?php echo $this->get_field_id( 'show_tweetbutton_recommend' ); ?>" name="<?php echo $this->get_field_name( 'show_tweetbutton_recommend' ); ?>" />
 	<label for="<?php echo $this->get_field_id( 'show_tweetbutton_recommend' ); ?>"><b><?php _e('Activate Recommend', 'tweet_master'); ?></b></label></br>
 	</p>
-<div style="background: url(<?php echo plugins_url('../images/techgasp-hr.png', __FILE__); ?>) repeat-x; height: 10px"></div>
+<div style="background: url(<?php echo plugins_url('images/techgasp-hr.png', dirname(__FILE__)); ?>) repeat-x; height: 10px"></div>
 	<p>
-	<img src="<?php echo plugins_url('../images/techgasp-minilogo-16.png', __FILE__); ?>" style="float:left; height:16px; vertical-align:middle;" />
+	<img src="<?php echo plugins_url('images/techgasp-minilogo-16.png', dirname(__FILE__)); ?>" style="float:left; height:16px; vertical-align:middle;" />
 	&nbsp;
 	<input type="checkbox" <?php checked( (bool) $instance['show_followbutton'], true ); ?> id="<?php echo $this->get_field_id( 'show_followbutton' ); ?>" name="<?php echo $this->get_field_name( 'show_followbutton' ); ?>" />
 	<label for="<?php echo $this->get_field_id( 'show_followbutton' ); ?>"><b><?php _e('Twitter Follow Button', 'tweet_master'); ?></b></label>
@@ -199,9 +199,9 @@ class tweet_master_widget_buttons extends WP_Widget {
 	<input type="checkbox" <?php checked( (bool) $instance['show_followbutton_count'], true ); ?> id="<?php echo $this->get_field_id( 'show_followbutton_count' ); ?>" name="<?php echo $this->get_field_name( 'show_followbutton_count' ); ?>" />
 	<label for="<?php echo $this->get_field_id( 'show_followbutton_count' ); ?>"><b><?php _e('Display Bubble Count', 'tweet_master'); ?></b></label>
 	</p>
-<div style="background: url(<?php echo plugins_url('../images/techgasp-hr.png', __FILE__); ?>) repeat-x; height: 10px"></div>
+<div style="background: url(<?php echo plugins_url('images/techgasp-hr.png', dirname(__FILE__)); ?>) repeat-x; height: 10px"></div>
 	<p>
-	<img src="<?php echo plugins_url('../images/techgasp-minilogo-16.png', __FILE__); ?>" style="float:left; height:16px; vertical-align:middle;" />
+	<img src="<?php echo plugins_url('images/techgasp-minilogo-16.png', dirname(__FILE__)); ?>" style="float:left; height:16px; vertical-align:middle;" />
 	&nbsp;
 	<input type="checkbox" <?php checked( (bool) $instance['show_hashtagbutton'], true ); ?> id="<?php echo $this->get_field_id( 'show_hashtagbutton' ); ?>" name="<?php echo $this->get_field_name( 'show_hashtagbutton' ); ?>" />
 	<label for="<?php echo $this->get_field_id( 'show_hashtagbutton' ); ?>"><b><?php _e('Twitter Hashtag Button', 'tweet_master'); ?></b></label>
@@ -212,17 +212,17 @@ class tweet_master_widget_buttons extends WP_Widget {
 	<div class="description">insert Hashtag without #</div>
 	<div class="description">requires that you fill your Twitter Username</div>
 	</p>
-<div style="background: url(<?php echo plugins_url('../images/techgasp-hr.png', __FILE__); ?>) repeat-x; height: 10px"></div>
+<div style="background: url(<?php echo plugins_url('images/techgasp-hr.png', dirname(__FILE__)); ?>) repeat-x; height: 10px"></div>
 	<p>
-	<img src="<?php echo plugins_url('../images/techgasp-minilogo-16.png', __FILE__); ?>" style="float:left; height:16px; vertical-align:middle;" />
+	<img src="<?php echo plugins_url('images/techgasp-minilogo-16.png', dirname(__FILE__)); ?>" style="float:left; height:16px; vertical-align:middle;" />
 	&nbsp;
 	<input type="checkbox" <?php checked( (bool) $instance['show_mentionbutton'], true ); ?> id="<?php echo $this->get_field_id( 'show_mentionbutton' ); ?>" name="<?php echo $this->get_field_name( 'show_mentionbutton' ); ?>" />
 	<label for="<?php echo $this->get_field_id( 'show_mentionbutton' ); ?>"><b><?php _e('Twitter Mention Button', 'tweet_master'); ?></b></label>
 	<div class="description">requires that you fill your Twitter Username</div>
 	</p>
-<div style="background: url(<?php echo plugins_url('../images/techgasp-hr.png', __FILE__); ?>) repeat-x; height: 10px"></div>
+<div style="background: url(<?php echo plugins_url('images/techgasp-hr.png', dirname(__FILE__)); ?>) repeat-x; height: 10px"></div>
 	<p>
-	<img src="<?php echo plugins_url('../images/techgasp-minilogo-16.png', __FILE__); ?>" style="float:left; width:16px; vertical-align:middle;" />
+	<img src="<?php echo plugins_url('images/techgasp-minilogo-16.png', dirname(__FILE__)); ?>" style="float:left; width:16px; vertical-align:middle;" />
 	&nbsp;
 	<b>Tweet Master Website</b>
 	</p>
